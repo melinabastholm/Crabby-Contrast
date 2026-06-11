@@ -1,0 +1,807 @@
+/* GENERELT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baloo 2", sans-serif;
+
+}
+
+body {
+    overflow: hidden;
+    background: #FFF7ED;
+}
+
+/* SKIFT MELLEM SIDER */
+.screen {
+    display: none;
+}
+
+.startscreen,
+.screen:target {
+    display: block;
+}
+
+body:has(.screen:target) .startscreen {
+    display: none;
+}
+
+body:has(.startscreen:target) .startscreen {
+    display: block;
+}
+
+/* STARTSKÆRM */
+.startscreen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.baggrund {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 520px;
+    max-width: 80%;
+}
+
+.krabbe {
+    position: absolute;
+    bottom: 70px;
+    left: 150px;
+    width: 320px;
+}
+
+.menu {
+    position: absolute;
+    right: 150px;
+    top: 65%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.menu a {
+    width: 355px;
+    height: 85px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #B7D7EA;
+
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    transform: scale(1.05);
+}
+
+/* FÆLLES LEVEL-LAYOUT */
+.intro-screen,
+.level-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #FFF7ED;
+    padding: 35px 48px;
+    position: relative;
+}
+
+.level-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tilbage-knap {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.tilbage-pil {
+    width: 60px;
+    display: block;
+}
+
+.level-tekst {
+    position: absolute;
+    left: 165px;
+    top: 45px;
+
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.hjerter {
+    display: flex;
+    gap: 1px;
+}
+
+.hjerter img {
+    width: 62px;
+}
+
+/* INTRO-SIDE */
+.intro-indhold {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    align-items: start;
+    column-gap: 30px;
+
+    margin-top: 62px;
+    padding: 0 45px;
+}
+
+.intro-tekst {
+    max-width: 550px;
+}
+
+.intro-tekst h1 {
+    font-size: 3.35rem;
+    margin-bottom: 52px;
+}
+
+.intro-tekst p {
+    font-size: 1.28rem;
+    font-weight: 700;
+    line-height: 1.65;
+    margin-bottom: 5px;
+}
+
+.farvecirkel {
+    width: 390px;
+    justify-self: center;
+    margin-top: 0;
+}
+
+.tip-boks {
+    position: absolute;
+    left: 49px;
+    bottom: 20px;
+
+    width: 456px;
+    min-height: 132px;
+
+    background: #FDE6B8;
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    padding: 18px 28px;
+}
+
+.lightbulb {
+    width: 130px;
+}
+
+.tip-boks p {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.start-level-knap,
+.tjek-knap,
+.feedback-knap {
+    width: 445px;
+    min-height: 102px;
+    border: none;
+    border-radius: 24px;
+    background: #B7D7EA;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+.start-level-knap {
+    position: absolute;
+    right: 74px;
+    bottom: 48px;
+}
+
+.start-level-knap:hover {
+    transform: scale(1.05);
+}
+
+/* FÆLLES OPSÆTNING FOR BANER */
+.level-opgave {
+    min-height: calc(100vh - 150px);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 28px;
+    padding: 10px 24px 138px;
+}
+
+.level-heading {
+    text-align: center;
+}
+
+.level-heading h1 {
+    font-size: 2.4rem;
+    line-height: 1;
+}
+
+.level-heading p {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+/* BANE 1 */
+.valg-grid {
+    display: grid;
+    gap: 34px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tekst-valg {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.svar-kort,
+.farve-svar {
+    cursor: pointer;
+}
+
+.svar-kort input,
+.farve-svar input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tekst-kort {
+    position: relative;
+    min-height: 220px;
+    border-radius: 16px;
+    background: #d7c4ff;
+    display: grid;
+    place-items: center;
+    padding-bottom: 0;
+    border: 6px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tekst-kort span:first-of-type {
+    font-size: 3.1rem;
+    font-weight: 900;
+}
+
+.tekst-kort--bedst span:first-of-type {
+    color: #08001f;
+}
+
+.tekst-kort--middel span:first-of-type {
+    color: #4f149d;
+}
+
+.tekst-kort--lav span:first-of-type {
+    color: #c8b5ff;
+}
+
+.valg-prik {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -42px;
+    margin: 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #7432ff;
+}
+
+.tekst-kort:has(input:checked) .valg-prik {
+    display: none;
+}
+
+.tekst-kort:has(input:checked)::after {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -72px;
+    text-align: center;
+    transform: rotate(-10deg);
+    font-size: 4.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #000;
+}
+
+.svar-kort:has(input:checked) {
+    border-color: #222;
+    transform: translateY(-8px);
+}
+
+/* BANE 2*/
+.farve-opgave {
+    display: grid;
+    grid-template-columns: minmax(260px, 410px) minmax(340px, 520px);
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+}
+
+.farve-preview {
+    min-height: 250px;
+    border-radius: 14px;
+    background: #bcefff;
+    display: grid;
+    place-items: center;
+}
+
+.farve-preview span {
+    color: var(--preview-color, #8f8f8f);
+    font-size: 2.6rem;
+    font-weight: 900;
+}
+
+.farve-palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding: 22px;
+    border-radius: 14px;
+    background: #20383f;
+}
+
+.farve-svar img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    border: 5px solid transparent;
+    object-fit: cover;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.farve-svar:has(input:checked) img {
+    border-color: #fff;
+    transform: scale(1.08);
+}
+
+/* BANE 3 */
+.stor-tekst-opgave {
+    width: min(930px, 82vw);
+    align-self: center;
+    justify-self: center;
+    border-radius: 18px;
+    background: #ff5b60;
+    padding: 28px 92px 30px;
+    color: #000;
+    font-weight: 900;
+    line-height: 1.35;
+}
+
+.stor-tekst-opgave h2 {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 22px;
+}
+
+.stor-tekst-opgave p,
+.stor-tekst-opgave li {
+    font-size: 0.82rem;
+}
+
+.stor-tekst-opgave p {
+    margin-bottom: 16px;
+}
+
+.stor-tekst-opgave ul {
+    padding-left: 22px;
+    margin-bottom: 18px;
+}
+
+.tekstvalg-i-blok {
+    display: inline;
+    cursor: pointer;
+}
+
+.tekstvalg-i-blok input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tekstvalg-i-blok span {
+    display: inline;
+    padding: 0 5px;
+    border: 3px solid transparent;
+    border-radius: 4px;
+}
+
+.tekstvalg-i-blok--svag span {
+    color: #d95a5f;
+}
+
+.tekstvalg-i-blok:has(input:checked) span {
+    border-color: #00df38;
+}
+
+/* BUNDOMRÅDE MED TIP OG TJEK SVAR */
+.level-bund {
+    position: absolute;
+    left: 49px;
+    right: 74px;
+    bottom: 48px;
+    display: flex;
+    align-items: end;
+    gap: 22px;
+}
+
+#level1Bane1 .level-opgave {
+    grid-template-rows: auto 1fr auto;
+    gap: 22px;
+    padding-top: 4px;
+}
+
+#level1Bane1 .level-heading h1 {
+    font-size: 3rem;
+}
+
+#level1Bane1 .level-heading p {
+    margin-top: 16px;
+    font-size: 1.25rem;
+}
+
+#level1Bane1 .tekst-valg {
+    max-width: 930px;
+    gap: 70px;
+    align-self: center;
+    margin-top: -22px;
+}
+
+#level1Bane1 .tekst-kort {
+    min-height: 220px;
+    border-radius: 15px;
+    padding-bottom: 0;
+}
+
+#level1Bane1 .tekst-kort span:first-of-type {
+    font-size: 3.2rem;
+}
+
+#level1Bane1 .svar-kort:has(input:checked) {
+    border-color: transparent;
+    transform: none;
+}
+
+#level1Bane2 .level-opgave {
+    gap: 18px;
+    padding-top: 4px;
+}
+
+#level1Bane2 .level-heading h1 {
+    font-size: 2.65rem;
+}
+
+#level1Bane2 .level-heading p {
+    font-size: 1.25rem;
+}
+
+#level1Bane2 .svar-kort:has(input:checked),
+#level1Bane2 .tekstvalg-i-blok:has(input:checked) {
+    transform: none;
+}
+
+/* TIP-BOKS */
+.tip-omraade {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.tip-knap {
+    width: 92px;
+    height: 92px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.level-tip {
+    width: 82px;
+}
+
+.tip-popover {
+    width: 310px;
+    min-height: 92px;
+    border-radius: 14px;
+    background: #FDE6B8;
+    display: grid;
+    grid-template-columns: 1fr 86px;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+}
+
+.tip-popover[hidden] {
+    display: none;
+}
+
+.tip-popover p {
+    font-size: 0.95rem;
+    font-weight: 900;
+    line-height: 1.25;
+}
+
+.tip-farvecirkel {
+    width: 78px;
+}
+
+/* KNAPPER */
+.tjek-knap {
+    margin-left: auto;
+    display: inline-flex;
+}
+
+.tjek-knap:hover {
+    transform: scale(1.04);
+}
+
+/* FEEDBACK- OG FORKLARINGSSIDER */
+.feedback-side,
+.forklaring-side {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    background-color: #FFF7ED;
+    background-image: url("assets/baggrund.png");
+    background-size: cover;
+    background-position: center;
+    padding: 34px 58px;
+}
+
+.feedback-side[hidden],
+.forklaring-side[hidden] {
+    display: none;
+}
+
+.feedback-logo {
+    position: absolute;
+    right: 36px;
+    top: 24px;
+    width: 250px;
+}
+
+.feedback-indhold {
+    min-height: calc(100vh - 190px);
+    display: grid;
+    grid-template-columns: 240px minmax(300px, 1fr) 430px;
+    align-items: center;
+    gap: 34px;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.feedback-ikon {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #000;
+}
+
+.feedback-side[data-result="correct"] .feedback-ikon {
+    background: #00df38;
+}
+
+.feedback-side[data-result="wrong"] .feedback-ikon {
+    background: #ff0900;
+}
+
+.feedback-tekst {
+    text-align: center;
+}
+
+.feedback-tekst h2,
+.feedback-tekst p {
+    font-weight: 900;
+    color: #000;
+}
+
+.feedback-tekst h2 {
+    font-size: 3.9rem;
+    line-height: 1.05;
+}
+
+.feedback-tekst p {
+    margin-top: 28px;
+    font-size: 3.2rem;
+    line-height: 1.15;
+}
+
+.feedback-krabbe {
+    position: absolute;
+    right: 6%;
+    bottom: 22%;
+    height: 250px;
+    width: auto;
+}
+
+.feedback-knapper {
+    position: absolute;
+    left: 58px;
+    bottom: 48px;
+    display: flex;
+    gap: 32px;
+}
+
+.feedback-knap {
+    display: inline-flex;
+}
+
+.feedback-knap[hidden] {
+    display: none;
+}
+
+.luk-forklaring {
+    position: absolute;
+    right: 34px;
+    top: 28px;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.forklaring-kort {
+    position: relative;
+    width: min(1100px, calc(100vw - 520px));
+    min-height: 520px;
+    margin: 115px auto 0;
+    padding: 58px 92px 62px;
+    border-radius: 18px;
+    background: #ffd1c2;
+}
+
+.forklaring-kort h2 {
+    font-size: 3rem;
+    margin-bottom: 56px;
+}
+
+.forklaring-linje {
+    display: grid;
+    grid-template-columns: 110px minmax(360px, 1fr) 260px;
+    align-items: center;
+    gap: 44px;
+    margin-bottom: 54px;
+}
+
+.forklaring-linje p {
+    max-width: 520px;
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 1.45;
+}
+
+.forklaring-eksempler {
+    display: flex;
+    gap: 28px;
+}
+
+.forklaring-eksempelgruppe {
+    display: none;
+}
+
+.forklaring-side[data-type="hola"] .forklaring-eksempelgruppe--hola,
+.forklaring-side[data-type="colors"] .forklaring-eksempelgruppe--colors {
+    display: flex;
+}
+
+.forklaring-eksempel {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: contain;
+    justify-self: center;
+}
+
+.forklaring-farver {
+    display: grid;
+    grid-template-columns: repeat(2, 62px);
+    gap: 14px;
+}
+
+.forklaring-farver img {
+    width: 62px;
+    height: 62px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.mini-ikon {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #000;
+    font-size: 4.6rem;
+    font-weight: 900;
+}
+
+.mini-ikon--rigtig {
+    background: #00df38;
+}
+
+.mini-ikon--forkert {
+    background: #ff0900;
+}
+
+@media (max-height: 780px) {
+    .intro-indhold {
+        margin-top: 54px;
+    }
+
+    .intro-tekst h1 {
+        margin-bottom: 44px;
+    }
+
+    .farvecirkel {
+        width: 350px;
+    }
+
+    .tip-boks {
+        bottom: 10px;
+        min-height: 124px;
+    }
+
+    .start-level-knap {
+        bottom: 54px;
+    }
+
+    .level-bund {
+        bottom: 54px;
+    }
+}

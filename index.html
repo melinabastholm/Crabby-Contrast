@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crabby Contrast</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Startskærm -->
+    <section class="screen startscreen" id="startscreen">
+
+        <img src="assets/baggrund.png" alt="dekorativ baggrund" class="baggrund">
+
+        <img src="assets/crabby-contrast-logo.png" alt="Crabby Contrast" class="logo">
+
+        <img src="assets/happy-crab.png" alt="glad krabbe" class="krabbe">
+
+        <div class="menu">
+            <a href="#introKontrast">SPIL</a>
+            <a href="#startscreen">LEVELS</a>
+            <a href="#startscreen">OM SPILLET</a>
+        </div>
+
+    </section>
+
+    <!-- Intro til level 1 -->
+    <section class="screen intro-screen" id="introKontrast">
+
+        <header class="level-topbar">
+            <a href="#startscreen" class="tilbage-knap" aria-label="Gå tilbage til menuen">
+                <img src="assets/arrow-back.png" alt="" class="tilbage-pil">
+            </a>
+
+            <p class="level-tekst">Level 1/8</p>
+
+            <div class="hjerter">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+            </div>
+        </header>
+
+        <div class="intro-indhold">
+
+            <div class="intro-tekst">
+                <h1>Intro til kontrast</h1>
+
+                <p>
+                    Kontrast er forskellen mellem to farver
+                    eller elementer.
+                </p>
+
+                <p>
+                    Høj kontrast gør indhold lettere at se og
+                    læse, mens lav kontrast kan gøre tekst og
+                    elementer svære at skelne fra hinanden.
+                </p>
+            </div>
+
+            <img src="assets/farvecirkel.png" alt="Farvecirkel" class="farvecirkel">
+
+        </div>
+
+        <div class="tip-boks">
+            <img src="assets/light-bulb.png" alt="" class="lightbulb">
+
+            <p>
+                Kontrast hjælper med at gøre vigtige elementer
+                mere tydelige i et design.
+            </p>
+        </div>
+
+        <a href="#level1Bane1" class="start-level-knap">
+            START
+        </a>
+
+    </section>
+
+    <!-- Level 1, bane 1 -->
+    <section class="screen level-screen" id="level1Bane1">
+
+        <header class="level-topbar">
+            <a href="#introKontrast" class="tilbage-knap" aria-label="Gå tilbage til introen">
+                <img src="assets/arrow-back.png" alt="" class="tilbage-pil">
+            </a>
+
+            <p class="level-tekst">Level 1/8</p>
+
+            <div class="hjerter">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+            </div>
+        </header>
+
+        <form class="level-opgave" data-level-form data-next="#level1Bane2"
+            data-explanation-type="hola"
+            data-good-explanation="Farven på teksten skaber en tydelig kontrast til baggrundsfarven."
+            data-bad-explanation="Farverne ligger for tæt på hinanden i lyshed, så bliver kontrasten for lav til at skabe tydelig læsbarhed.">
+            <div class="level-heading">
+                <h1>Intro til kontrast</h1>
+                <p>Hvilken tekst er mest læsbar?</p>
+            </div>
+
+            <div class="valg-grid tekst-valg">
+                <label class="svar-kort tekst-kort tekst-kort--bedst">
+                    <input type="radio" name="level1" data-correct="true">
+                    <span>HOLA!</span>
+                    <span class="valg-prik" aria-hidden="true"></span>
+                </label>
+
+                <label class="svar-kort tekst-kort tekst-kort--middel">
+                    <input type="radio" name="level1">
+                    <span>HOLA!</span>
+                    <span class="valg-prik" aria-hidden="true"></span>
+                </label>
+
+                <label class="svar-kort tekst-kort tekst-kort--lav">
+                    <input type="radio" name="level1">
+                    <span>HOLA!</span>
+                    <span class="valg-prik" aria-hidden="true"></span>
+                </label>
+            </div>
+
+            <div class="level-bund level-bund--bane1">
+                <div class="tip-omraade">
+                    <button type="button" class="tip-knap" data-tip-button aria-expanded="false" aria-label="Åbn tip">
+                        <img src="assets/light-bulb.png" alt="" class="level-tip">
+                    </button>
+
+                    <div class="tip-popover" data-tip-box hidden>
+                        <p>Kontrast hjælper med at gøre vigtige elementer mere tydelige i et design.</p>
+                        <img src="assets/farvecirkel.png" alt="" class="tip-farvecirkel">
+                    </div>
+                </div>
+
+                <button type="submit" class="tjek-knap">TJEK SVAR</button>
+            </div>
+        </form>
+
+    </section>
+
+    <!-- Level 1, bane 2 -->
+    <section class="screen level-screen" id="level1Bane2">
+
+        <header class="level-topbar">
+            <a href="#level1Bane1" class="tilbage-knap" aria-label="Gå tilbage til forrige bane">
+                <img src="assets/arrow-back.png" alt="" class="tilbage-pil">
+            </a>
+
+            <p class="level-tekst">Level 1/8</p>
+
+            <div class="hjerter">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+            </div>
+        </header>
+
+        <form class="level-opgave" data-level-form data-next="#level1Bane3"
+            data-has-explanation="false"
+            data-good-explanation="Den svage tekst er sværest at læse, fordi tekstfarven og baggrunden ligger tæt på hinanden i lyshed."
+            data-bad-explanation="Den mørke tekst er lettere at læse, fordi den har tydelig forskel til den røde baggrund.">
+            <div class="level-heading">
+                <h1>Intro til kontrast</h1>
+                <p>Vælg den tekst der er sværest at læse</p>
+            </div>
+
+            <div class="stor-tekst-opgave">
+                <h2>Farvecirklen</h2>
+
+                <p>
+                    Farvecirklen er et visuelt redskab inden for farvelære, der
+                    viser sammenhængen mellem forskellige farver. Den gør det
+                    nemt at forstå, hvordan man kan sammensætte og blande
+                    farver, så man opnår harmoni eller skaber iøjnefaldende
+                    kontraster.
+                </p>
+
+                <p>
+                    Sådan er den opbygget
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Primærfarver:</strong>
+                        <label class="tekstvalg-i-blok tekstvalg-i-blok--svag">
+                            <input type="radio" name="level2" data-correct="true">
+                            <span>Rød, gul og blå.</span>
+                        </label>
+                        Disse kan du ikke blande dig til.
+                    </li>
+                    <li>
+                        <strong>Sekundærfarver:</strong>
+                        <label class="tekstvalg-i-blok">
+                            <input type="radio" name="level2">
+                            <span>Opstår, når du blander to primærfarver.</span>
+                        </label>
+                        F.eks. rød + gul = orange, eller blå + gul = grøn.
+                    </li>
+                    <li>
+                        <strong>Tertiærfarver:</strong>
+                        <label class="tekstvalg-i-blok">
+                            <input type="radio" name="level2">
+                            <span>Blandingstoner mellem primær- og sekundærfarver.</span>
+                        </label>
+                    </li>
+                </ul>
+
+                <p>
+                    Udnyt farvecirklen praktisk. Cirklen bruges ofte til at finde
+                    ud af, hvilke farver der passer godt sammen. To farver, der
+                    ligger direkte over for hinanden i cirklen, kaldes
+                    komplementærfarver. Når de placeres ved siden af hinanden,
+                    fremhæver de hinanden mest muligt.
+                </p>
+            </div>
+
+            <div class="level-bund level-bund--bane2">
+                <div class="tip-omraade">
+                    <button type="button" class="tip-knap" data-tip-button aria-expanded="false" aria-label="Åbn tip">
+                        <img src="assets/light-bulb.png" alt="" class="level-tip">
+                    </button>
+
+                    <div class="tip-popover" data-tip-box hidden>
+                        <p>Kontrast hjælper med at gøre vigtige elementer mere tydelige i et design.</p>
+                        <img src="assets/farvecirkel.png" alt="" class="tip-farvecirkel">
+                    </div>
+                </div>
+
+                <button type="submit" class="tjek-knap">TJEK SVAR</button>
+            </div>
+        </form>
+
+    </section>
+
+    <!-- Level 1, bane 3 -->
+    <section class="screen level-screen" id="level1Bane3">
+
+        <header class="level-topbar">
+            <a href="#level1Bane2" class="tilbage-knap" aria-label="Gå tilbage til forrige bane">
+                <img src="assets/arrow-back.png" alt="" class="tilbage-pil">
+            </a>
+
+            <p class="level-tekst">Level 1/8</p>
+
+            <div class="hjerter">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+                <img src="assets/heart.png" alt="liv">
+            </div>
+        </header>
+
+        <form class="level-opgave" data-level-form data-next="#startscreen"
+            data-explanation-type="colors"
+            data-correct-title="Stærkt!!"
+            data-correct-subtitle="Du gjorde det igen"
+            data-wrong-title="Nitten.."
+            data-wrong-subtitle="Heldet er ikke med dig"
+            data-next-label="NÆSTE LEVEL"
+            data-good-explanation="Farven på teksten er måske ikke visuelt pæne, men du kan tydeligt læse hvad der står, uden at få ondt i øjnene"
+            data-bad-explanation="Disse farver har en lyshed, der ligger tæt på baggrundens. Derfor skaber de ikke nok kontrast og er mindre tydelige at se.">
+            <div class="level-heading">
+                <h1>Intro til kontrast</h1>
+                <p>Vælg en farve der er tydelig at læse</p>
+            </div>
+
+            <div class="farve-opgave">
+                <div class="farve-preview">
+                    <span>HOLA!</span>
+                </div>
+
+                <div class="farve-palette" aria-label="Vælg tekstfarve">
+                    <label class="farve-svar" style="--swatch: #063b8f;">
+                        <input type="radio" name="level3" data-color="#063b8f" data-correct="true">
+                        <img src="assets/color-001C57.png" alt="Mørkeblå farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #dfff00;">
+                        <input type="radio" name="level3" data-color="#dfff00">
+                        <img src="assets/color-E5FF00.png" alt="Neongul farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #e8ecef;">
+                        <input type="radio" name="level3" data-color="#e8ecef">
+                        <img src="assets/color-D9D9D9.png" alt="Lysegrå farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #df7bd9;">
+                        <input type="radio" name="level3" data-color="#df7bd9" data-correct="true">
+                        <img src="assets/color-E98ADF.png" alt="Lyserød farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #16f20b;">
+                        <input type="radio" name="level3" data-color="#16f20b">
+                        <img src="assets/color-1EFF00.png" alt="Grøn farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #ff4137;">
+                        <input type="radio" name="level3" data-color="#ff4137" data-correct="true">
+                        <img src="assets/color-FF3B30.png" alt="Rød farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #31c7d9;">
+                        <input type="radio" name="level3" data-color="#31c7d9">
+                        <img src="assets/color-24D3E8.png" alt="Turkis farve">
+                    </label>
+
+                    <label class="farve-svar" style="--swatch: #174d2c;">
+                        <input type="radio" name="level3" data-color="#174d2c" data-correct="true">
+                        <img src="assets/color-1F4D2E.png" alt="Mørkegrøn farve">
+                    </label>
+                </div>
+            </div>
+
+            <div class="level-bund">
+                <img src="assets/light-bulb.png" alt="" class="level-tip">
+                <button type="submit" class="tjek-knap">TJEK SVAR</button>
+            </div>
+        </form>
+
+    </section>
+
+    <!-- Fælles feedbackside -->
+    <section class="feedback-side" data-feedback-side hidden>
+        <img src="assets/crabby-contrast-logo.png" alt="Crabby Contrast" class="feedback-logo">
+
+        <div class="feedback-indhold">
+            <div class="feedback-ikon" data-feedback-icon></div>
+
+            <div class="feedback-tekst">
+                <h2 data-feedback-title></h2>
+                <p data-feedback-subtitle></p>
+            </div>
+
+            <img src="assets/happy-crab.png" alt="" class="feedback-krabbe" data-feedback-crab>
+        </div>
+
+        <div class="feedback-knapper">
+            <a href="#startscreen" class="feedback-knap" data-feedback-next>NÆSTE</a>
+            <button type="button" class="feedback-knap" data-open-explanation>FORKLARING</button>
+        </div>
+    </section>
+
+    <section class="forklaring-side" data-explanation-side hidden>
+        <img src="assets/crabby-contrast-logo.png" alt="Crabby Contrast" class="feedback-logo">
+
+        <div class="forklaring-kort">
+            <button type="button" class="luk-forklaring" data-close-explanation aria-label="Luk forklaring">×</button>
+
+            <h2>Forklaring</h2>
+
+            <div class="forklaring-linje">
+                <span class="mini-ikon mini-ikon--rigtig">✓</span>
+                <p data-good-explanation-text></p>
+                <div class="forklaring-eksempelgruppe forklaring-eksempelgruppe--hola">
+                    <img src="assets/hola-dark.png" alt="HOLA med tydelig kontrast" class="forklaring-eksempel">
+                </div>
+
+                <div class="forklaring-eksempelgruppe forklaring-eksempelgruppe--colors">
+                    <div class="forklaring-farver">
+                        <img src="assets/color-001C57.png" alt="Mørkeblå farve">
+                        <img src="assets/color-E98ADF.png" alt="Lyserød farve">
+                        <img src="assets/color-FF3B30.png" alt="Rød farve">
+                        <img src="assets/color-1F4D2E.png" alt="Mørkegrøn farve">
+                    </div>
+                </div>
+            </div>
+
+            <div class="forklaring-linje">
+                <span class="mini-ikon mini-ikon--forkert">×</span>
+                <p data-bad-explanation-text></p>
+                <div class="forklaring-eksempler forklaring-eksempelgruppe forklaring-eksempelgruppe--hola">
+                    <img src="assets/hola-medium.png" alt="HOLA med medium kontrast" class="forklaring-eksempel">
+                    <img src="assets/hola-light.png" alt="HOLA med lav kontrast" class="forklaring-eksempel">
+                </div>
+
+                <div class="forklaring-eksempelgruppe forklaring-eksempelgruppe--colors">
+                    <div class="forklaring-farver">
+                        <img src="assets/color-E5FF00.png" alt="Neongul farve">
+                        <img src="assets/color-24D3E8.png" alt="Turkis farve">
+                        <img src="assets/color-1EFF00.png" alt="Grøn farve">
+                        <img src="assets/color-D9D9D9.png" alt="Lysegrå farve">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
