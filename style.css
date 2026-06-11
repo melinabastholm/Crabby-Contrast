@@ -370,7 +370,7 @@ body:has(.startscreen:target) .startscreen {
 }
 
 .farve-preview span {
-    color: var(--preview-color, #8f8f8f);
+    color: #8f8f8f;
     font-size: 2.6rem;
     font-weight: 900;
 }

@@ -43,10 +43,11 @@ function hideExplanation() {
 
 levelForms.forEach((form) => {
     const colorAnswers = form.querySelectorAll("[data-color]");
+    const previewText = form.querySelector(".farve-preview span");
 
     colorAnswers.forEach((answer) => {
         answer.addEventListener("change", () => {
-            form.style.setProperty("--preview-color", answer.dataset.color);
+            previewText.style.color = answer.dataset.color;
         });
     });
 
