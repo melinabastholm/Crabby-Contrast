@@ -20,7 +20,7 @@ function showFeedback(form, isCorrect) {
     feedbackSubtitle.textContent = isCorrect ? (form.dataset.correctSubtitle || "Godt gået!!!") : (form.dataset.wrongSubtitle || "Bedre held næste gang");
     feedbackCrab.src = isCorrect ? "assets/happy-crab.png" : "assets/mad-crab.png";
 
-    // Feedbackknappen går altid videre til den næste bane.
+
     feedbackNext.href = form.dataset.next;
     feedbackNext.textContent = form.dataset.nextLabel || "NÆSTE";
     feedbackNext.hidden = false;
